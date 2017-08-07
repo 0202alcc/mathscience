@@ -151,3 +151,6 @@ body{
 #rankedshowAnswer{
 	display: none;
 }
+.tabs {
+	position: inherit;
+}
