@@ -9,6 +9,7 @@ function signInWithGoogle() {
 			var email = user.email
 			var name = user.displayName
 			//set the image, p, and h3 to be the photo url of google acct, email, and display name
+			document.getElementById('profileInfo').style.display = "inline"
 			document.getElementById('google-pic').style.display = "inline"
 			document.getElementById('gone').innerHTML = null
 			document.getElementById('google-pic').setAttribute('src', image)
@@ -32,6 +33,7 @@ function checkIfLoggedIn() {
 			var image = user.photoURL
 			var email = user.email
 			var name = user.displayName
+			document.getElementById('profileInfo').style.display = "inline"
 			document.getElementById('google-pic').style.display = "inline"
 			document.getElementById('gone').innerHTML = null
 			document.getElementById('google-pic').setAttribute('src', image)
@@ -52,11 +54,6 @@ window.onload = function() {
 
 function signOut() {
 	firebase.auth().signOut()
-	document.getElementById('google-pic')
-        .setAttribute('src', '')
-    document.getElementById('pfp')
-        .setAttribute('src', '')
-    document.getElementById('google-email').innerHTML = null
-    document.getElementById('google-displayName').innerHTML = null
+
 	location.reload();
 }

@@ -5,10 +5,16 @@ body{
 	color: black;
 }
 .profileInfo{
+	/*display: none;*/
 	min-height: 64px;
 	min-width: 64px;
 	max-height: 64px;
 	max-width: 64px;
+}
+.picture{
+	min-height: 64px;
+	min-width: 64px;
+	max-height: 64px;
 }
 .info {
 	width: 50px;
