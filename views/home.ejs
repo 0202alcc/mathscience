@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Pdf parser</title>
+	<title>Nerd Trainer</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 	<script src="js/firebaseAuth.js"></script>
@@ -24,7 +24,7 @@
 				<li class="active" id="science"><a>Science Bowl</a></li>
 				<li><a>AMC</a></li>
 			</ul>
-			<a href="#" class="brand-logo center">Voting App</a>
+			<a href="#" class="brand-logo center">Nerd Trainer</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#">About Us</a></li>
 				<li><a class="components" href="#">Stat</a></li>
@@ -41,12 +41,14 @@
 				</li>
 			</ul>
 		</div>
+		<div class="nav-content">
 			<ul class="tabs tabs-transparent">
 				<li class="tab" onclick={changeDisplayTab1()}><a class="actv" href="#test1">Practice</a></li>
 				<li class="tab" onclick={changeDisplayTab2()}><a class="actv" href="#test2">Ranked Practice</a></li>
 				<li class="tab disabled" onclick={changeDisplayTab3()}><a href="#test3">Buzzer Practice</a></li>
 				<li class="tab" onclick={changeDisplayTab4()}><a class="actv" href="#test4">Team Practice</a></li>
 			</ul>
+		</div>
 	</nav>
 	
 	<!--	<select multiple id="source" name="source">-->
