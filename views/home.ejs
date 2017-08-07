@@ -75,7 +75,7 @@
 				<option value="PHYSICS">Physics</option>
 			</select>
 			</div>
-			<a class="waves-effect waves-light btn" onclick={getQuestions()}>New Question</a>
+			<a id="question" class="waves-effect waves-light btn" onclick={getQuestions()}>New Question</a>
 			<div class="questionGen">
 				<p id="question"></p>
 				<button class="waves-effect waves-light btn" id="W" onclick={checkAnswerW()}>W</button>
@@ -91,33 +91,36 @@
 	</span>
 	<span id="rankedPractice">
 		<center>
-			<div class="rankedcategory">
-			<select multiple id="rankedcategory">
-				<option value="alltopics" selected>All Topics</option>
-				<option value="ASTRONOMY">Astronomy</option>
-				<option value="BIOLOGY">Biology</option>
-				<option value="CHEMISTRY">Chemistry</option>
-				<option value="COMPUTER SCIENCE">Computer Science</option>
-				<option value="EARTH AND SPACE">Earth and Space</option>
-				<option value="EARTH SCIENCE">Earth Science</option>
-				<option value="ENERGY">Energy</option>
-				<option value="GENERAL SCIENCE">General Science</option>
-				<option value="MATH">Math</option>
-				<option value="PHYSICS">Physics</option>
-			</select>
-			</div>
-			<a class="waves-effect waves-light btn" onclick={getrankedQuestions()}>Next Question</a>
-			<div class="rankedquestionGen">
-				<p id="rankedquestion"></p>
-				<button class="waves-effect waves-light btn" id="Wranked" onclick={rankedcheckAnswerW()}>W</button>
-				<button class="waves-effect waves-light btn" id="Xranked" onclick={rankedcheckAnswerX()}>X</button>
-				<button class="waves-effect waves-light btn" id="Yranked" onclick={rankedcheckAnswerY()}>Y</button>
-				<button class="waves-effect waves-light btn" id="Zranked" onclick={rankedcheckAnswerZ()}>Z</button>
-				<br>
-				<a class="waves-effect waves-light btn" id="rankedshowAnswer" onclick={rankedshowAnswer()}>Show Answer</a>
-				<p id="rankedstatus"></p>
-				<p id="rankedanswer"></p>
-			</div>
+			<p id="log-in">Please make sure you are logged in to do ranked practice</p>
+			<span id="rankedbox">
+				<div class="rankedcategory">
+				<select multiple id="rankedcategory">
+					<option value="alltopics" selected>All Topics</option>
+					<option value="ASTRONOMY">Astronomy</option>
+					<option value="BIOLOGY">Biology</option>
+					<option value="CHEMISTRY">Chemistry</option>
+					<option value="COMPUTER SCIENCE">Computer Science</option>
+					<option value="EARTH AND SPACE">Earth and Space</option>
+					<option value="EARTH SCIENCE">Earth Science</option>
+					<option value="ENERGY">Energy</option>
+					<option value="GENERAL SCIENCE">General Science</option>
+					<option value="MATH">Math</option>
+					<option value="PHYSICS">Physics</option>
+				</select>
+				</div>
+				<a class="waves-effect waves-light btn" id="question" onclick={getrankedQuestions()}>Next Question</a>
+				<div class="rankedquestionGen">
+					<p id="rankedquestion"></p>
+					<button class="waves-effect waves-light btn" id="Wranked" onclick={rankedcheckAnswerW()}>W</button>
+					<button class="waves-effect waves-light btn" id="Xranked" onclick={rankedcheckAnswerX()}>X</button>
+					<button class="waves-effect waves-light btn" id="Yranked" onclick={rankedcheckAnswerY()}>Y</button>
+					<button class="waves-effect waves-light btn" id="Zranked" onclick={rankedcheckAnswerZ()}>Z</button>
+					<br>
+					<a class="waves-effect waves-light btn" id="rankedshowAnswer" onclick={rankedshowAnswer()}>Show Answer</a>
+					<p id="rankedstatus"></p>
+					<p id="rankedanswer"></p>
+				</div>
+			</span>
 		</center>
 	</span>
 	<script>

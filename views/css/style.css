@@ -63,10 +63,7 @@ body{
 	width: 90%;
 	height: auto;
 	left: 5%;
-	outline: black solid 2pt;
-	box-shadow: 10px 10px 5px black;
-	-webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
-	animation: mymove 5s infinite;
+	border-radius: 5px;
 }
 .rankedquestionGen{
 	position: absolute;
@@ -74,10 +71,8 @@ body{
 	width: 90%;
 	height: auto;
 	left: 5%;
-	outline: black solid 2pt;
-	box-shadow: 10px 10px 5px black;
-	-webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
-	animation: mymove 5s infinite;
+	border-color: teal;
+	border-radius: 5px;
 }
 .rankedcategory{
 	width: 66.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666%;
@@ -153,4 +148,10 @@ body{
 }
 #rankedshowAnswer{
 	display: none;
+}
+#rankedbox{
+	display: none;
+}
+#question{
+	margin-bottom: 20px;
 }

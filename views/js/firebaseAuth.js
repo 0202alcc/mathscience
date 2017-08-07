@@ -9,6 +9,7 @@ function signInWithGoogle() {
 			var email = user.email
 			var name = user.displayName
 			//set the image, p, and h3 to be the photo url of google acct, email, and display name
+			document.getElementById('rankedbox').style.display = "inline"
 			document.getElementById('profileInfo').style.display = "inline"
 			document.getElementById('google-pic').style.display = "inline"
 			document.getElementById('gone').innerHTML = null
@@ -33,6 +34,8 @@ function checkIfLoggedIn() {
 			var image = user.photoURL
 			var email = user.email
 			var name = user.displayName
+			document.getElementById('log-in').style.display = "none"
+			document.getElementById('rankedbox').style.display = "inline"
 			document.getElementById('profileInfo').style.display = "inline"
 			document.getElementById('google-pic').style.display = "inline"
 			document.getElementById('gone').innerHTML = null
