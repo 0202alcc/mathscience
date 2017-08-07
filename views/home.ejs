@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pdf parser</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="js/firebaseAuth.js"></script>
+	<script src="js/firebaseConfig.js"></script>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/script.js"></script>
+	<script src="js/ranked.js"></script>
+</head>
+
+<body>
+	<nav class="teal nav-extended">
+		<div class="nav-wrapper">
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li class="active" id="science"><a>Science Bowl</a></li>
+				<li><a>AMC</a></li>
+			</ul>
+			<a href="#" class="brand-logo center">Voting App</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="#">About Us</a></li>
+				<li><a class="components" href="#">Stat</a></li>
+				<li><a id="gone" onclick={signInWithGoogle()}>Sign In With google</a>
+					<div class="profileInfo">
+						<img class="info" id="google-pic" src="" />
+						<div class="infoBackground" style="float: right;">
+							<img class="pfp" id="pfp" src="" />
+							<b id="google-displayName"></b>
+							<p id="google-email"></p>
+							<a class="waves-effect waves-light btn red accent-2" id="logout" onclick={signOut()}>Log out</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="nav-content">
+			<ul class="tabs tabs-transparent">
+				<li class="tab" onclick={changeDisplayTab1()}><a class="actv" href="#test1">Practice</a></li>
+				<li class="tab" onclick={changeDisplayTab2()}><a class="actv" href="#test2">Ranked Practice</a></li>
+				<li class="tab disabled" onclick={changeDisplayTab3()}><a href="#test3">Buzzer Practice</a></li>
+				<li class="tab" onclick={changeDisplayTab4()}><a class="actv" href="#test4">Team Practice</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!--	<select multiple id="source" name="source">-->
+	<!--		<option value="allsources" selected>All Sources</option>-->
+	<!--		<option value="CSUB">CSUB Regionals</option>-->
+	<!--		<option value="98Nats">1998 Nationals</option>-->
+	<!--		<option value="05Nats">2005 Nationals</option>-->
+	<!--		<option value="Official">Official Set</option>-->
+	<!--	</select>-->
+	<span id="practice">
+		<center>
+			<div class="category">
+			<select multiple id="category">
+				<option value="alltopics" selected>All Topics</option>
+				<option value="ASTRONOMY">Astronomy</option>
+				<option value="BIOLOGY">Biology</option>
+				<option value="CHEMISTRY">Chemistry</option>
+				<option value="COMPUTER SCIENCE">Computer Science</option>
+				<option value="EARTH AND SPACE">Earth and Space</option>
+				<option value="EARTH SCIENCE">Earth Science</option>
+				<option value="ENERGY">Energy</option>
+				<option value="GENERAL SCIENCE">General Science</option>
+				<option value="MATH">Math</option>
+				<option value="PHYSICS">Physics</option>
+			</select>
+			</div>
+			<a class="waves-effect waves-light btn" onclick={getQuestions()}>New Question</a>
+			<div class="questionGen">
+				<p id="question"></p>
+				<button class="waves-effect waves-light btn" id="W" onclick={checkAnswerW()}>W</button>
+				<button class="waves-effect waves-light btn" id="X" onclick={checkAnswerX()}>X</button>
+				<button class="waves-effect waves-light btn" id="Y" onclick={checkAnswerY()}>Y</button>
+				<button class="waves-effect waves-light btn" id="Z" onclick={checkAnswerZ()}>Z</button>
+				<br>
+				<a class="waves-effect waves-light btn" id="showAnswer" onclick={showAnswer()}>Show Answer</a>
+				<p id="status"></p>
+				<p id="answer"></p>
+			</div>
+		</center>
+	</span>
+	<span id="rankedPractice">
+		<center>
+			<div class="rankedcategory">
+			<select multiple id="rankedcategory">
+				<option value="alltopics" selected>All Topics</option>
+				<option value="ASTRONOMY">Astronomy</option>
+				<option value="BIOLOGY">Biology</option>
+				<option value="CHEMISTRY">Chemistry</option>
+				<option value="COMPUTER SCIENCE">Computer Science</option>
+				<option value="EARTH AND SPACE">Earth and Space</option>
+				<option value="EARTH SCIENCE">Earth Science</option>
+				<option value="ENERGY">Energy</option>
+				<option value="GENERAL SCIENCE">General Science</option>
+				<option value="MATH">Math</option>
+				<option value="PHYSICS">Physics</option>
+			</select>
+			</div>
+			<a class="waves-effect waves-light btn" onclick={getrankedQuestions()}>Next Question</a>
+			<div class="rankedquestionGen">
+				<p id="rankedquestion"></p>
+				<button class="waves-effect waves-light btn" id="Wranked" onclick={rankedcheckAnswerW()}>W</button>
+				<button class="waves-effect waves-light btn" id="Xranked" onclick={rankedcheckAnswerX()}>X</button>
+				<button class="waves-effect waves-light btn" id="Yranked" onclick={rankedcheckAnswerY()}>Y</button>
+				<button class="waves-effect waves-light btn" id="Zranked" onclick={rankedcheckAnswerZ()}>Z</button>
+				<br>
+				<a class="waves-effect waves-light btn" id="rankedshowAnswer" onclick={rankedshowAnswer()}>Show Answer</a>
+				<p id="rankedstatus"></p>
+				<p id="rankedanswer"></p>
+			</div>
+		</center>
+	</span>
+	<script>
+		$(function() {
+			$('.profileInfo img.info').click(function(e) {
+				$('.infoBackground').toggle();
+			});
+		});
+	</script>
+</body>
+
+</html>

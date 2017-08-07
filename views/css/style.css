@@ -1,0 +1,150 @@
+body{
+	background-color: #f9fbf8;
+}
+.card-title{
+	color: black;
+}
+.profileInfo{
+	min-height: 64px;
+	min-width: 64px;
+	max-height: 64px;
+	max-width: 64px;
+}
+.info {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	max-height: 50px;
+	max-width: 50px;
+	margin-top: 7px;
+	margin-right: 7px;
+	margin-left: 7px;
+	margin-bottom: 7px;
+	display: none;
+}
+.pfp {
+	border-radius: 50%;
+	width: 30%;
+	height: width;
+	margin-left: 6.25%;
+	margin-top: 6.25%;
+	margin-right: 6.25%;
+	margin-bottom: 6.25%;
+	float: left;
+}
+.infoBackground {
+	border-radius: 2%;
+	height: 130.047px;
+	width: 306px;
+	background: #f5f5f5;
+	position:absolute;
+	top:64px;
+	right:0;
+	display: none;
+}
+.hidden {
+	display: none;
+}
+.nav-content {
+	background-color: #5baa33;
+}
+.category{
+	width: 66.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666%;
+}
+.questionGen{
+	position: absolute;
+	background-color: white;
+	width: 90%;
+	height: auto;
+	left: 5%;
+	outline: black solid 2pt;
+	box-shadow: 10px 10px 5px black;
+	-webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+	animation: mymove 5s infinite;
+}
+.rankedquestionGen{
+	position: absolute;
+	background-color: white;
+	width: 90%;
+	height: auto;
+	left: 5%;
+	outline: black solid 2pt;
+	box-shadow: 10px 10px 5px black;
+	-webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+	animation: mymove 5s infinite;
+}
+.rankedcategory{
+	width: 66.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666%;
+}
+#practice {
+	display: inline;
+}
+#rankedPractice {
+	display: none;
+}
+#clear{
+	float: right;
+	bottom: 40px;
+}
+#cardcolor{
+	background-color: #f5f5f5;
+}
+#google-displayName {
+	font-family: arial, sans-serif;
+	color: black;
+	margin-top: 20.8333333333%;
+	font-size: 15px;
+}
+#google-email{
+	font-family: arial, sans-serif;
+	color:black;
+	font-size: 15px;
+	margin: 0;
+	position: relative;
+	left:0;
+	right:0;
+	bottom: 50px;
+}
+#logout{
+	position:relative;
+	bottom: 80px;
+}
+#science.active{
+	background-color: #5baa33;
+}
+#W{
+	display: none;
+}
+#X{
+	display: none;
+}
+#Y{
+	display: none;
+}
+#Z{
+	display: none;
+}
+#status{
+	display: none;
+}
+#showAnswer{
+	display: none;
+}
+#Wranked{
+	display: none;
+}
+#Xranked{
+	display: none;
+}
+#Yranked{
+	display: none;
+}
+#Zranked{
+	display: none;
+}
+#rankedstatus{
+	display: none;
+}
+#rankedshowAnswer{
+	display: none;
+}
